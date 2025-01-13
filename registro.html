@@ -1,0 +1,143 @@
+<?php
+session_start();
+
+if (isset($_SESSION['username'])) {
+    header("Location: deportes.php"); 
+    exit(); 
+}
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Dinámico de Login y Registro</title>
+</head>
+<body>
+    <div class="form-container">
+        <!-- Formulario de Inicio de Sesión -->
+        <form action="validarlogin.php" method="POST" id="login-form" class="form active-form">
+            <h2>Iniciar Sesión</h2>
+            
+            <div id="error-message-login" class="error-message"></div>
+
+            <div class="input-group">
+                <input type="text" name="username" placeholder="username" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" name="contrasena" placeholder="contrasena" required>
+            </div>
+
+            <button type="submit" class="form-button">Entrar</button>
+            <p class="toggle-link">¿No tienes cuenta? <a href="#" id="show-register">Regístrate aquí</a></p>
+        </form>
+
+        <!-- Formulario de Registro -->
+        <form action="guardar.php" method="POST" id="register-form" class="form">
+            <h2>Registro</h2>
+            
+            <div id="error-message-register" class="error-message"></div>
+
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" name="contrasena" placeholder="contrasena" required>
+            </div>
+
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" name="cedula" placeholder="Cédula" required>
+            </div>
+
+            <button type="submit" class="form-button">Registrarse</button>
+            <p class="toggle-link">¿Ya tienes cuenta? <a href="#" id="show-login">Inicia sesión aquí</a></p>
+        </form>
+    </div>
+
+    <script>
+        // Alternar entre formularios de login y registro
+        document.getElementById('show-register').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('login-form').classList.remove('active-form');
+            document.getElementById('register-form').classList.add('active-form');
+        });
+
+        document.getElementById('show-login').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('register-form').classList.remove('active-form');
+            document.getElementById('login-form').classList.add('active-form');
+        });
+    </script>
+
+    <style>
+        .form-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form {
+            display: none;
+        }
+
+        .form.active-form {
+            display: block;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 10px;
+            background: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-button:hover {
+            background: #4cae4c;
+        }
+
+        .toggle-link {
+            margin-top: 15px;
+        }
+
+        .toggle-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .toggle-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    echo '
+    <script>
+        alert("Por favor debes iniciar sesión");
+        window.location = "registro.php";
+    </script>
+    ';
+    session_destroy();
+    die();
+}
+
+session_destroy();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deportes en Colombia</title>
+    <link rel="stylesheet" href="edicion.css">
+</head>
+<body>
+    <h1><center>DEPORTES EN COLOMBIA</center></h1>
+    <center><img src="https://periodicopalabrasmayores.com/wp-content/uploads/2019/07/M%C3%A1s-apoyo-al-deporte-Colombiano.jpg" width="70%"/></center><br>
+    <h2>El menu</h2><br>
+
+    <nav id="menu">
+        <ul>
+            <li><a href="iframe.php" target="contenido">Salir del sitio</a></li>
+            <li><a href="noticias.html" target="contenido">Noticias</a>
+                <ul>
+                    <li><a href="futbol.html" target="contenido">Fútbol</a></li>
+                    <li><a href="ciclismo.html" target="contenido">Ciclismo</a></li>
+                    <li><a href="atletismo.html" target="contenido">Atletismo</a></li>
+                    <li><a href="boxeo.html" target="contenido">Boxeo</a></li>
+                    <li><a href="otrodeportes.html" target="contenido">Otros Deportes</a></li>
+                </ul>
+            </li>
+            <li><a href="ligas y torneos.html" target="contenido">Ligas y Torneos</a>
+                <ul>
+                    <li><a href="futbol2.html" target="contenido">Fútbol</a></li>
+                    <li><a href="ciclismo2.html" target="contenido">Ciclismo</a></li>
+                    <li><a href="atletismo2.html" target="contenido">Atletismo</a></li>
+                    <li><a href="boxeo2.html" target="contenido">Boxeo</a>
+                        <ul>
+                            <li><a href="torneos profesionales.html" target="contenido">Torneos Profesionales</a></li>
+                            <li><a href="amateurs.html" target="contenido">Amateurs</a></li>
+                            <li><a href="liga femenina.html" target="contenido">Liga Femenina</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="multimedia.html" target="contenido">Multimedia</a>
+                <ul>
+                    <li><a href="fotos.html" target="contenido">Fotos</a></li>
+                    <li><a href="videos.html" target="contenido">Videos</a></li>
+                    <li><a href="podcast.html" target="contenido">Podcasts</a></li>
+                </ul>
+            </li>
+            <li><a href="articulosD.html" target="contenido">Artículos Deportivos</a>
+                <ul>
+                    <li><a href="balones.html" target="contenido">Balones</a></li>
+                    <li><a href="cascos.html" target="contenido">Cascos</a></li>
+                    <li><a href="guantes.html" target="contenido">Guantes</a></li>
+                    <li><a href="calsado.html" target="contenido">Calzado</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <br/><br/>
+   
+    <iframe src="" frameborder="3" width="1700px" height="800px" name="contenido"></iframe>
+    
+    <h3>Los deportes:</h3>
+    <div class="contenedor">
+        <img src="https://4.bp.blogspot.com/-shh_q0aZJiw/V7oWJTE2LVI/AAAAAAAAAeM/cG1h0e9iSeQuOK86UYeOot4c-5APSmaJwCLcB/s1600/diplomas4.jpeg" width="70%" height="60%">
+    </div>
+    <div class="txt">
+        <p>Colombia es un país con una rica tradición deportiva, destacándose en una variedad de disciplinas. Aquí hay una visión general de algunos de los deportes más populares y exitosos en Colombia:
+        <br/>
+        <b>Fútbol:</b> El fútbol es, sin duda, el deporte más popular en Colombia. La selección nacional ha tenido éxitos notables, incluyendo la victoria en la Copa América en 2001 y varias apariciones destacadas en la Copa del Mundo de la FIFA. Jugadores colombianos como Carlos Valderrama, Radamel Falcao y James Rodríguez han ganado reconocimiento internacional.
+        <br/>
+        <b>Béisbol:</b> El béisbol es especialmente popular en la costa norte de Colombia. Cartagena y Barranquilla son centros importantes para este deporte. Varios jugadores colombianos han llegado a las Grandes Ligas de Béisbol (MLB) en Estados Unidos, como Édgar Rentería, quien ganó la Serie Mundial en dos ocasiones.
+        <br/>
+        <b>Patinaje de Velocidad:</b> Colombia es una potencia mundial en el patinaje de velocidad sobre ruedas. El país ha ganado numerosos campeonatos mundiales, con patinadores como Cecilia Baena y Pedro Causil alcanzando reconocimiento mundial.
+        <br/>
+        <b>Boxeo:</b> El boxeo ha sido un deporte exitoso en Colombia con varios campeones mundiales como Antonio Cervantes (Kid Pambelé) y Miguel "Happy" Lora. Este deporte sigue siendo muy popular y una fuente de orgullo nacional.
+        <br/>
+        <b>Levantamiento de Pesas:</b> Colombia ha tenido éxito en el levantamiento de pesas, logrando medallas en Juegos Olímpicos y campeonatos mundiales. María Isabel Urrutia, quien ganó la primera medalla de oro olímpica para Colombia en Sídney 2000, y Óscar Figueroa, medallista de oro en Río 2016, son algunos de los nombres destacados.
+        <br/>
+        <b>Atletismo:</b> En atletismo, Caterine Ibargüen ha sido una de las figuras más destacadas, ganando medallas de oro en los Juegos Olímpicos y múltiples campeonatos mundiales en salto triple.
+        <br/>
+        <b>Otros Deportes:</b> Otros deportes como el tenis, con jugadores como Juan Sebastián Cabal y Robert Farah en dobles, y el automovilismo, con pilotos como Juan Pablo Montoya, también han ganado popularidad y éxito en Colombia.
+        Colombia sigue siendo un semillero de talentos deportivos y su pasión por el deporte es evidente en los logros y el entusiasmo de sus atletas y aficionados.
+        </p>
+    </div>
+    
+</body>
+</html>
+
+
+
+
